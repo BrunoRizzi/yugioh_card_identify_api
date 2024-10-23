@@ -124,7 +124,6 @@ def find_language(text):
 
 @app.route('/identify_card', methods=['POST'])
 def identify_card():
-    print("Received request on /identify_card")
     if 'image' not in request.files:
         return jsonify({'error': 'No image file provided'}), 400
 
@@ -142,10 +141,6 @@ def identify_card():
     # Read the image file
     file_bytes = np.frombuffer(image_file.read(), np.uint8)
     image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-
-    # Debug: Check the image content
-    print("Image array: ", image)
-    print("Image array shape: ", image.shape if image is not None else "None")
 
     # Use EasyOCR to read text from the image
     results = reader.readtext(image)
