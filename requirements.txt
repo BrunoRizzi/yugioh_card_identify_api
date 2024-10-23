@@ -1,6 +1,6 @@
 Flask==2.2.5
 easyocr==1.7.1
-opencv-python-headless==4.10.0
+opencv-python-headless==4.10.0.84
 pandas==1.2.4
 thefuzz==0.20.0
 numpy==1.21.6
